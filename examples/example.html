@@ -1,0 +1,66 @@
+<html>
+<body>
+    <svg clip-path="url(#clip)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="100%" height="600px" clip="right" preserveAspectRatio="xMidyMid" viewBox="0 0 800 500" enable-background="new 0 0 800 500" xml:space="preserve">
+
+        <defs>
+            <clipPath id="clip">
+                <rect width="800" height="500" />
+            </clipPath>
+
+            <marker
+                id="planeMarker"
+                refX="250" refY="250"
+                markerWidth="16" markerHeight="16"
+                viewBox="0 0 500 500"
+                orient="auto">
+                <path stroke-dasharray="0" fill="#FFFFFF" stroke="#646565" stroke-width="22" stroke-miterlimit="10" d="M486.845,261.054
+		            c-4.724,25.531-44.365,64.798-89.315,63.923c-44.948-0.874-47.868,7.882-47.868,7.882S265.6,424.216,239.332,451.947
+		            c-26.27,27.729-34.15,19.265-58.669,8.173s-15.178-33.566-15.178-33.566l33.565-118.798l-5.939-1.566l-59.542-12.26
+		            c0,0-31.521,33.274-54.288,43.782c-22.765,10.508-50.785,7.006-45.531-29.77c5.253-36.777,5.253-36.777,5.253-36.777
+		            s-25.589-2.229-26.757-20.908v-0.514c1.168-18.68,26.757-20.91,26.757-20.91s0,0-5.253-36.775
+		            c-5.255-36.775,22.767-40.277,45.53-29.771c22.768,10.506,54.289,43.779,54.289,43.779l59.542-12.258l5.939-1.568L165.482,73.446
+		            c0,0-9.341-22.475,15.178-33.566c24.518-11.092,32.399-19.556,58.669,8.173C265.598,75.781,349.659,167.14,349.659,167.14
+		            s2.919,8.756,47.869,7.88c44.95-0.875,85.522,38.236,89.317,63.921C486.845,238.941,488.892,249.998,486.845,261.054z" />
+            </marker>
+        </defs>
+
+        <polygon fill="#00AEEF" stroke-miterlimit="10" points="800,500 0,500 0,290.097 0,132.771 0,0 800,0 " />
+        <path fill="#58B947" stroke="#8DC63F" stroke-width="6" stroke-miterlimit="10" d="M0,504.109h344.312
+			c-7.643-26.501-55.777-71.095-109.917-81.436s-90.446-87.26-94.904-100.188S94.904,239.105,0,222.299" />
+				<path fill="#58B947" stroke="#8DC63F" stroke-width="6" stroke-miterlimit="10" d="M389.646,0
+			c23.566,89.459,35.031,86.911,67.516,115.574s54.142,33.122,67.517,78.344s26.752,66.879,56.051,89.172
+			s109.553,56.688,149.044-47.771s123.567-77.707,129.937-70.701S813.85-17.547,813.85-17.547L389.646-29.012V0z" />
+
+        <path id="planePath" marker-end="url(#planeMarker)" fill="none" stroke="#FFFFFF" stroke-dasharray="12,12" stroke-width="6" stroke-miterlimit="10"
+              data-d="M45.058,441.051c2.009,0,4.009-0.007,6-0.021c185.006-3.972,290.62-69.862,321.479-190.86
+        C415.17,129.926,521.179,92.333,621.589,90.188c2.003-0.015,4.003-0.016,6-0.004" />
+
+    </svg>
+    <button id="fly">Fly</button>
+	<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="../src/CubicBezier.js"></script>
+    <script src="../src/QuadraticBezier.js"></script>
+    <script src="../src/MathUtilities.js"></script>
+    <script src="../src/PathSubstringGenerators.js"></script>
+    <script src="../src/SvgPathAnimator.js"></script>
+    <script src="../src/SvgPathParser.js"></script>
+    <script src="../src/Tween.js"></script>
+    <script>
+		$(function(){
+			var $path = $("#planePath");
+			var start = 0.01; //1%;
+			var end = 1; //100%
+			var duration = 2000; //2 seconds
+			var easing = 'easeOutQuad';
+			var callback = function(){/* Finished! */};
+			
+			svgPathAnimator.setDistanceOfPath($path, start)
+		
+			$("#fly").click(function(){
+				svgPathAnimator.animate($path, start, end, duration, easing, callback);
+			});
+		});
+    </script>
+</body>
+</html>
