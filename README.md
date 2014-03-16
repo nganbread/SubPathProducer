@@ -9,12 +9,12 @@ A small library that generates SVG sub-paths.
 Why?
 ==============
 
-Almost all techniques used to progressively draw an SVG path make use of the `stroke-dashoffset` or `stroke-dasharray`. The method doesn't progressively *draw* the path, but progressively *shows* it. Coupled with the non-conventional use of the dash properties; **several limitations become apparent**:
+Almost all existing techniques used to progressively draw an SVG path make use of the `stroke-dashoffset` or `stroke-dasharray` path attributes. The method doesn't progressively *draw* the path, but progressively *shows* it. Coupled with the non-conventional use of the dash properties; **several limitations become apparent**:
 
-* Dashed lines that behave as if theyre being drawn on the screen
-* Markers that follow the tip of the line being drawn
-* Line Caps that are visible while the path is being drawn
-* Stroke and Fill effects that have a dependency on the length of the line (eg, gradients)
+* Dashed lines don't behave as if they are being drawn on the screen
+* Markers don't follow the tip of the line being drawn and are visible all the time
+* Line Caps aren't visible when the path is in a partially drawn state
+* Stroke and Fill effects that have a dependency on the length of the line arent applied as expected when the path is partially drawn (eg, gradients)
 
 PathProducer gets around these problems by drawing sub-path instead of just hiding a portion of it. PathProducer can quickly generate SVG path data that represents the required path, allowing the SVG Path specification to be used as it should be, in it's complete entirety.
 
