@@ -336,4 +336,4 @@
         return path;
     };
 
-})(window.svgPathAnimator = window.svgPathAnimator || {});
+})(window.pathProducer = window.pathProducer || {});

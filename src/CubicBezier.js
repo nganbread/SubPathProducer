@@ -80,4 +80,4 @@
         return [solution[1], solution[2]];
     };
 
-})(window.svgPathAnimator = window.svgPathAnimator || {});
+})(window.pathProducer = window.pathProducer || {});

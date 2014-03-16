@@ -43,7 +43,7 @@
     <script src="../src/QuadraticBezier.js"></script>
     <script src="../src/MathUtilities.js"></script>
     <script src="../src/PathSubstringGenerators.js"></script>
-    <script src="../src/SvgPathAnimator.js"></script>
+    <script src="../src/pathProducer.js"></script>
     <script src="../src/SvgPathParser.js"></script>
     <script src="../src/Tween.js"></script>
     <script>
@@ -55,10 +55,10 @@
 			var easing = 'easeOutQuad';
 			var callback = function(){/* Finished! */};
 			
-			svgPathAnimator.setDistanceOfPath($path, start)
+			pathProducer.set($path, start)
 		
 			$("#fly").click(function(){
-				svgPathAnimator.animate($path, start, end, duration, easing, callback);
+				pathProducer.animate($path, start, end, duration, easing, callback);
 			});
 		});
     </script>

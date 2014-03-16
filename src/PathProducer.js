@@ -1,6 +1,6 @@
 ﻿(function(ns) {
 
-    ns.setDistanceOfPath = function (element, percentage) {
+    ns.set = function (element, percentage) {
         var $element = $(element);
 
         var dString = $element.data('d');
@@ -34,12 +34,12 @@
     };
 	
 	ns.animate = function(element, start, end, duration, easing, callback){
-		ns.setDistanceOfPath(element, start);
+		ns.set(element, start);
 		
 		ns.tween(start, end, duration, function(value){
-			ns.setDistanceOfPath(element, value);
+			ns.set(element, value);
 		},callback, easing);
 	
 	};
 
-})(window.svgPathAnimator = window.svgPathAnimator || {});
+})(window.pathProducer = window.pathProducer || {});

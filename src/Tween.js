@@ -49,4 +49,4 @@
         };
         requestAnimationFrame(animate);
     };
-})(window.svgPathAnimator = window.svgPathAnimator || {});
+})(window.pathProducer = window.pathProducer || {});
