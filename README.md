@@ -17,14 +17,14 @@ For example, in the most simplest of cases:
 Why?
 ==============
 
-Almost all existing techniques used to progressively draw an SVG path make use of the `stroke-dashoffset` or `stroke-dasharray` path attributes. The method doesn't progressively *draw* the path, but progressively *shows* it. Coupled with the non-conventional use of the dash properties; **several limitations become apparent**:
+Almost all existing techniques used to progressively draw an SVG path make use of the `stroke-dashoffset` or `stroke-dasharray` path attributes. These methods don't progressively *draw* the path, but progressively *show* it. Coupled with the non-conventional use of the dash properties; **several limitations become apparent**:
 
 * Dashed lines don't behave as if they are being drawn on the screen
 * Markers don't follow the tip of the line being drawn and are visible all the time
-* Line Caps aren't visible when the path is in a partially drawn state
+* Line Caps ends aren't visible when the path is in a partially drawn state
 * Stroke and Fill effects that have a dependency on the length of the line arent applied as expected when the path is partially drawn (eg, gradients)
 
-SubPathProducer gets around these problems by drawing sub-path instead of just hiding a portion of it. SubPathProducer can quickly generate SVG path data that represents the required path, allowing the SVG Path specification to be used as it should be, in it's complete entirety.
+SubPathProducer gets around these problems by drawing sub-paths instead of just hiding a portion of it. SubPathProducer can quickly generate SVG path data that represents the required path at a given percentage, allowing the SVG Path specification to be used as it should be, in it's complete entirety.
 
 
 Dependencies
