@@ -1,7 +1,15 @@
-PathProducer
+SubPathProducer
 ===============
 
 A small library that generates SVG sub-paths.
+
+For example, in the most simplest of cases:
+
+    Given the SVG path data: 
+        d="M0,0 L100,100"
+        
+    When asked for the path data that represents 50% of the Path, SubPathProducer would generate the following
+        d="M0,0 L50,50"
 
 [http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation](http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation)
 
@@ -16,19 +24,19 @@ Almost all existing techniques used to progressively draw an SVG path make use o
 * Line Caps aren't visible when the path is in a partially drawn state
 * Stroke and Fill effects that have a dependency on the length of the line arent applied as expected when the path is partially drawn (eg, gradients)
 
-PathProducer gets around these problems by drawing sub-path instead of just hiding a portion of it. PathProducer can quickly generate SVG path data that represents the required path, allowing the SVG Path specification to be used as it should be, in it's complete entirety.
+SubPathProducer gets around these problems by drawing sub-path instead of just hiding a portion of it. SubPathProducer can quickly generate SVG path data that represents the required path, allowing the SVG Path specification to be used as it should be, in it's complete entirety.
 
 
 Dependencies
 ===============
 
-PathProducer has a weak dependency on jQuery which will be removed upon further development.
+SubPathProducer has a weak dependency on jQuery which will be removed upon further development.
 
 Usage
 ==============
 
 
-To use PathProducer simply define the path data of an SVG <Path> element in a `data-d` attribute instead of the regular `d`. 
+To use SubPathProducer simply define the path data of an SVG <Path> element in a `data-d` attribute instead of the regular `d`. 
 
 
     
@@ -38,9 +46,9 @@ To use PathProducer simply define the path data of an SVG <Path> element in a `d
 
 
 
-Call `pathProducer.set($pathElement, percentage)` to instruct PathProducer to calculate the path data for a path that represents the `data-d` path data at the given percentage. The calculated path data string will then be injected into the elements `d` attribute to be presented on the DOM. 
+Call `subPathProducer.set($pathElement, percentage)` to instruct SubPathProducer to calculate the path data for a path that represents the `data-d` path data at the given percentage. The calculated path data string will then be injected into the elements `d` attribute to be presented on the DOM. 
 
-      pathParser.set($("#myPath), 0.5);
+      subPathProducer.set($("#myPath), 0.5);
 
 If we were to inspect the element after calling `set()`, we would see the following:
 
@@ -51,7 +59,7 @@ If we were to inspect the element after calling `set()`, we would see the follow
 Notice how the `d` attribute looks like regular SVG path data, but simply represents half of the data provided in `data-d`. This flexibility allows us to make use of all of the features of the `<path>` tag, as outlined in the SVG specification by w3.
 
 
-`pathProducer.animate($pathElement, startPercentage, endPercentage, duration, easing, callback)` calls a tweening function to animate between the provided percentages. Under the hood, `animate()` calls `set()`
+`subPathProducer.animate($pathElement, startPercentage, endPercentage, duration, easing, callback)` calls a tweening function to animate between the provided percentages. Under the hood, `animate()` calls `set()`
 
 Examples and More Information
 ============
