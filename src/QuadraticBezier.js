@@ -46,4 +46,4 @@
 
         return subControlPoint;
     };
-})(window.pathProducer = window.pathProducer || {});
+})(window.subPathProducer = window.subPathProducer || {});

@@ -80,4 +80,4 @@
         return [solution[1], solution[2]];
     };
 
-})(window.pathProducer = window.pathProducer || {});
+})(window.subPathProducer = window.subPathProducer || {});
