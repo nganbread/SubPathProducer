@@ -3,6 +3,8 @@ PathProducer
 
 A small library that generates SVG sub-paths.
 
+[http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation](http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation)
+
 
 Why?
 ==============
