@@ -11,7 +11,7 @@ For example, in the most simplest of cases:
     When asked for the path data that represents 50% of the Path, SubPathProducer would generate the following
         d="M0,0 L50,50"
 
-[http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation](http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation)
+[http://nganbread.com/Blog/2014/03/13/ProperSvgLineAnimation](http://nganbread.com/Blog/2014/03/13/ProperSvgLineAnimation)
 
 
 Why?
@@ -65,4 +65,4 @@ Examples and More Information
 ============
 Hit the below link to see an example of the `animate()` function being used to progressively draw a dashed line with a fluid looking `marker`. 
 
-[http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation](http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation)
+[http://nganbread.com/Blog/2014/03/13/ProperSvgLineAnimation](http://nganbread.com/Blog/2014/03/13/ProperSvgLineAnimation)
