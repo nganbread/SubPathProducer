@@ -65,4 +65,4 @@ Examples and More Information
 ============
 Hit the below link to see an example of the `animate()` function being used to progressively draw a dashed line with a fluid looking `marker`. 
 
-[http://buildwithco.de/Blog/2014/03/13/TrueSvgLineAnimation](http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation)
+[http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation](http://nganbread.com/Blog/2014/03/13/TrueSvgLineAnimation)
